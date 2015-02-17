@@ -1,0 +1,35 @@
+{
+  "name": "grunt-build-ninascript",
+  "version": "0.0.1",
+  "description": "Task to build and validate NinaScript package",
+  "repository": "https://github.com/mcasella/grunt-build-ninascript",
+  "author": {
+    "name": "Matt Casella",
+    "email": "matt.casella@nuance.com",
+    "url": ""
+  },
+  "keywords": [
+    "gruntplugin"
+  ],
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-copy": "^0.7.0",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-nodeunit": "~0.3.0",
+    "grunt-zip": "^0.16.2",
+    "jshint-stylish": "~0.1.5",
+    "load-grunt-tasks": "~0.3.0",
+    "time-grunt": "^1.0.0"
+  }
+  "devDependencies": {
+  },
+  "scripts": {
+    "test": "grunt test"
+  }
+}
