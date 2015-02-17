@@ -28,6 +28,7 @@
     "time-grunt": "^1.0.0"
   },
   "devDependencies": {
+    "load-grunt-config": "^0.16.0"
   },
   "scripts": {
     "test": "grunt test"

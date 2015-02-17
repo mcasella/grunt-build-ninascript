@@ -25,7 +25,7 @@ module.exports = function (grunt) {
   // Actually load this plugin's task(s).
   //grunt.loadTasks('tasks');
   
-  grunt.loadNpmTasks('tasks');
+  grunt.loadTasks('tasks');
   grunt.registerTask('default', 'build_ninascript');
   
   console.log('grunt config='+JSON.stringify(grunt.config(), undefined, 2));
