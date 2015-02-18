@@ -1,13 +1,8 @@
 module.exports = function(grunt) {
-  
-   console.log('blah');
-  
-   grunt.config('zip', {
-     main: {
-        src: require('../config/app').buildDir + '/**',
-        dest: require('../config/app').outputFile
-     }
-   });
-
+  grunt.registerTask('zip', 'zip', function() {
+    grunt.log.writeln("zip task");
     grunt.loadNpmTasks('grunt-zip');
+    
+    grunt.task.run('zip');
+  });
 };

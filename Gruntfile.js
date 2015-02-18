@@ -8,19 +8,32 @@
 
 'use strict';
 
+function loadConfig(path) {
+  var glob = require('glob');
+  var object = {};
+  var key;
+ 
+  glob.sync('*', {cwd: path}).forEach(function(option) {
+    key = option.replace(/\.js$/,'');
+    object[key] = require(path + option);
+  });
+ 
+  return object;
+}
+
 module.exports = function (grunt) {
   grunt.log.writeln('starting grunt-build-ninascript');
   // load all npm grunt tasks
   require('load-grunt-tasks')(grunt);
   
-  // Project configuration.
-  grunt.initConfig({ 
-    build_ninascript: {
-        main: {
-        }
-    }
+  var config = {
+    pkg: grunt.file.readJSON('package.json'),
+    env: process.env
+  };
   
-  });
+  // Project configuration.
+  grunt.util._.extend(config, loadConfig('./tasks/options/'));
+  grunt.initConfig(config);
   
   // Actually load this plugin's task(s).
   //grunt.loadTasks('tasks');

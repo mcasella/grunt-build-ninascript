@@ -1,16 +1,8 @@
 module.exports = function(grunt) {
-  
-   grunt.config('clean', {
-      options: {
-        trace: true
-      },
-      init: {
-        src: [require('../config/app').outputFile, require('../config/app').buildDir]
-      },
-      cleanup:{
-        src: require('../config/app').buildDir
-      } 
-    });
-
-    grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.registerTask('clean', 'clean', function() {
+    grunt.log.writeln("clean task");
+    grunt.loadNpmTasks('grunt-contrib-clean');    
+    
+    grunt.task.run('copy');
+  });
 };
